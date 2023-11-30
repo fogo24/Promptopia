@@ -76,12 +76,12 @@ const Nav = () => {
               width={37}
               height={37}
               className="rounded-full"
-              alt="ptofile"
+              alt="profile"
               onClick={() => setToggleDropdow((prev) => !prev)}
             />
 
             {toggleDropdown && (
-              <div className="toggleDropdown">
+              <div className="dropdown">
                 <Link
                   href="/profile"
                   className="dropdown_link"
@@ -94,8 +94,18 @@ const Nav = () => {
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
-                  My Profile
+                  Create Prompt
                 </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setToggleDropdow(false);
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn"
+                >
+                  Sign Out
+                </button>
               </div>
             )}
           </div>
